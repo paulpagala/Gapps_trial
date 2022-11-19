@@ -30,7 +30,7 @@ import { useTheme } from '@mui/material/styles';
 import success_logo_source from "../public/success-svgrepo-com.svg";
 
 
-const steps = ['Service Settings', 'Parking Areas', ' Rules & guidelines' ];
+const steps = ['Service Settings', 'Parking Areas & slots', ' Rules & guidelines' ];
 
 function getStepContent(step) {
   switch (step) {
@@ -91,10 +91,10 @@ export default function Checkout() {
         </Typography>
         </Box>
         <Box sx={{display: 'flex',flexDirection: 'row', ml: 20 }}> 
-           <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey'}} gutterBottom>
+           <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'grey'}} gutterBottom>
            The Globe Tower 
         </Typography>
-        <Typography component="subtitle1" variant="subtitle1"  sx={{ml:5, color: 'grey'}} gutterBottom>
+        <Typography component="Subtitle1" variant="Subtitle1"  sx={{ml:5, color: 'grey'}} gutterBottom>
            Fixed rate car parking slots for our Ka-globe
         </Typography>
         </Box>
