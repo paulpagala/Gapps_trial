@@ -23,6 +23,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Checkbox from '@mui/material/Checkbox';
+import AddSlots from '../addSlots';
+import { Link } from '@mui/material';
 
 
 
@@ -51,7 +53,7 @@ export default function PolicyDetails() {
     setAreaFloor(event.target.value);
   };
 
-  const [numberOfSlots, setNumberOfSlots] = React.useState('7:00 AM');
+  const [numberOfSlots, setNumberOfSlots] = React.useState(5);
   const handleChangeNumberOfSlots = (event) => {
     setNumberOfSlots(event.target.value);
   };
@@ -82,12 +84,41 @@ export default function PolicyDetails() {
     setPhoneNumber(event.target.value);
   };
  
-  const [parkingName, setParkingName] = React.useState(() => []);
+  const [parkingName, setParkingName] = React.useState(() => ['']);
 
   const handleChangeParkingName = (event, newParkingName) => {
     setParkingName(newParkingName);
   };
+  // const [parkingName, setParkingName] = React.useState(() => []);
+
+  //   const handleChangeParkingName = (event, newParkingName) => {
+  //     setParkingName(newParkingName);
+  //   };
  
+  const arrayData = [];
+  for (let i = 0; i < numberOfSlots; i++) {
+    arrayData.push(i);
+  }
+
+  let element = arrayData.map((value, index) =>
+  
+  <Box key={index }sx={{mb:3,display:'flex',flexDirection:"row", alignItems: 'center', alignContent: 'stretch' }}>
+  <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom>Slot name {index}</Typography>
+  <Box>
+    <TextField
+      id="outlined-parkingName"
+      // label="Enter Slot Name"
+      value={parkingName}
+      onChange={handleChangeParkingName}
+      variant="outlined"
+      sx={{backgroundColor:'white', width:326, ml:2}}
+  />
+  </Box>
+</Box>);
+
+console.log(parkingName)
+
+
 
   return (
     <React.Fragment>
@@ -180,7 +211,7 @@ export default function PolicyDetails() {
 
         {slots ? (
         <Paper variant="outlined" sx={{ mr:5, ml: 5, my: { md: 1, lg: 3 }, p: { md: 2, lg: 3 }, backgroundColor:'#EFEFEF'}}>
-           
+           {element}
         </Paper>) 
         : 
         null}
@@ -191,12 +222,15 @@ export default function PolicyDetails() {
       <Paper variant="outlined" sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
       
       <Typography component="B1" variant="B1"  sx={{color: 'black'}} gutterBottom>
-       Upload list of available
+       Upload list of available parking areas
       </Typography>
       <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
-        Indicate the amount needed to be paid via GCash integration (default)
+        Missed the parking areas list template we shared?
       </Typography>
-    
+      <Link href='google.com'>Download template</Link>
+      <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
+        PRESH LAGAY MO DITO SKSKSKSKKSKSK
+      </Paper>
       </Paper>) }
          
     </React.Fragment>

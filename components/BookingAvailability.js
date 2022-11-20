@@ -9,7 +9,7 @@ import Box from '@mui/material/Box'
 
 const BookingAvailability = props => {
 
-  const [bookingScheduleStart, setBookingScheduleStart] = React.useState('7:00 AM');
+ const [bookingScheduleStart, setBookingScheduleStart] = React.useState('7:00 AM');
   const handleChangeBookingScheduleStart = (event) => {
     setBookingScheduleStart(event.target.value);
   };
@@ -19,11 +19,10 @@ const BookingAvailability = props => {
     setBookingScheduleEnd(event.target.value);
   };
 
-
+  
 
     return(
         <Box sx={{mb:3,display:'flex',flexDirection:"row", alignItems: 'center', alignContent: 'stretch' }}>
-              
           <Box sx={{width:100}}>
           <Typography sx={{color:'black',ml:3}}>{props.day}</Typography>
           </Box>

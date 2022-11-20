@@ -144,10 +144,10 @@ export default function PrimarySearchAppBar() {
           </IconButton>
           <div>
             {/* placeholder for now until we do the sso */}
-            <p style={{color: '#030303',top:13, fontSize:20, textAlign:'right',position:'relative'}}>
+            <p style={{color: '#030303',top:10, fontSize:18, textAlign:'right',position:'relative'}}>
               Tricia Gonzales 
             </p>
-            <p style={{color: '#848484', top:-12, fontSize:16, textAlign:'right',position:'relative'}}>
+            <p style={{color: '#848484', top:-10, fontSize:14, textAlign:'right',position:'relative'}}>
               Service Admin
             </p>
           </div>

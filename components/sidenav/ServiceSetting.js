@@ -11,8 +11,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
+import BookingAvailability,{bookingScheduleStart} from '../BookingAvailability';
 
-import BookingAvailability from '../BookingAvailability';
 
 
 export default function ServiceSetting() {
@@ -48,7 +48,7 @@ export default function ServiceSetting() {
     setServiceFee(event.target.value);
   };
 
-  
+ console.log(bookingScheduleStart)
   
   return (
     <React.Fragment>

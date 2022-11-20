@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from '@mui/material';
 import { useRouter } from "next/router";
+import Box from '@mui/material/Box';
 
 
 export default function ImgMediaCard() {
@@ -18,7 +19,8 @@ export default function ImgMediaCard() {
   
   
   return (
-    <Card sx={{ maxWidth: 950,height:400,mt:'292px',ml:'485px',display:'flex',flexDirection: 'row'}}>
+    <Box sx={{display:'flex',justifyContent:'center', mt: 35}}>
+    <Card sx={{ maxWidth: 950,height:400,display:'flex',flexDirection: 'row'}}>
         <CardMedia
         component="img"
         alt="bike"
@@ -46,5 +48,6 @@ export default function ImgMediaCard() {
       </CardActions>
       </div>
     </Card>
+    </Box>
   );
 }
