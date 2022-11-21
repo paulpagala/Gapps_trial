@@ -12,12 +12,12 @@ import Button from '@mui/material/Button';
 // import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import PolicyDetails from 'Gapps_trial/components/sidenav/PolicyDetails';
-import ServiceSetting from 'Gapps_trial/components/sidenav/serviceSetting';
-import Review from 'Gapps_trial/components/sidenav/Review';
+import PolicyDetails from '../components/sidenav/PolicyDetails';
+import ServiceSetting from '../components/sidenav/serviceSetting';
+import Review from '../components/sidenav/Review';
 import parking_logo_source from "/public/parking.svg";
 import Image from 'next/image'
-// import ResponsiveDialog from 'Gapps_trial/components/popUp';
+// import ResponsiveDialog from '../components/popUp';
 import { useRouter } from "next/router";
 // import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -27,7 +27,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import success_logo_source from "Gapps_trial/public/success-svgrepo-com.svg";
+import success_logo_source from "../public/success-svgrepo-com.svg";
 
 
 const steps = ['Service Settings', 'Parking Areas & slots', ' Rules & guidelines' ];

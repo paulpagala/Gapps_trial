@@ -23,7 +23,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Checkbox from '@mui/material/Checkbox';
-// import AddSlots from 'Gapps_trial/addSlots';
+// import AddSlots from '../addSlots';
 import { Link } from '@mui/material';
 
 
