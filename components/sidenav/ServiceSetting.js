@@ -11,7 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
-import BookingAvailability,{bookingScheduleStart} from '../BookingAvailability';
+import BookingAvailability,{bookingScheduleStart} from 'Gapps_trial/BookingAvailability';
 
 
 

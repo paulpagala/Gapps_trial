@@ -1,6 +1,6 @@
 
-import '../styles/landingPage.css'
-import '../styles/globals.css'
+import 'Gapps_trial/styles/landingPage.css'
+import 'Gapps_trial/styles/globals.css'
 import ResponsiveAppBar from "./navbar"
 
 

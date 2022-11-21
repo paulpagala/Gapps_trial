@@ -18,7 +18,7 @@ width: 40%;
 height: 65%;
 position: absolute;
 /* UI Properties */
-background: transparent url('../public/img_landingpage/Screen\ Shot\ 2020-06-10\ at\ 8.21.09\ AM.png') 0% 0% no-repeat padding-box;
+background: transparent url('Gapps_trial/public/img_landingpage/Screen\ Shot\ 2020-06-10\ at\ 8.21.09\ AM.png') 0% 0% no-repeat padding-box;
 opacity: 1;
 }
 
@@ -75,6 +75,6 @@ bottom: 0%;
 left: 0%;
 /* UI Properties */
 position: absolute;
-background: transparent url('../public/img_landingpage/Screen\ Shot\ 2020-06-10\ at\ 8.22.08\ AM.png') 0% 0% no-repeat padding-box;
+background: transparent url('Gapps_trial/public/img_landingpage/Screen\ Shot\ 2020-06-10\ at\ 8.22.08\ AM.png') 0% 0% no-repeat padding-box;
 opacity: 1;
 }
