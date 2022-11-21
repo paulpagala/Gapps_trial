@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PolicyDetails from '../components/sidenav/PolicyDetails';
-import ServiceSetting from '../components/sidenav/serviceSetting';
+import ServiceSetting from '../components/sidenav/ServiceSetting';
 import Review from '../components/sidenav/Review';
 import parking_logo_source from "/public/parking.svg";
 import Image from 'next/image'
