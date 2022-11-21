@@ -229,7 +229,8 @@ console.log(parkingName)
       </Typography>
       <Link href='google.com'>Download template</Link>
       <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
-        PRESH LAGAY MO DITO SKSKSKSKKSKSK
+          <Typography sx={{ml:3, mt:2}}>File uploaded</Typography>
+          <input type="file" accept=".xlsx,.xls,.csv"> Upload File</input>
       </Paper>
       </Paper>) }
          

@@ -23,6 +23,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 // import Checkbox from '@mui/material/Checkbox';
+import { Editor } from "react-draft-wysiwyg";
+import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 
 
@@ -181,6 +183,30 @@ export default function AddressForm() {
             </Box>
     </Paper>
     
+    <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
+    <Box sx={{ml:3}}>
+    <Typography  sx={{fontWeight: 'bold'}}>Policies</Typography>  
+    <Typography variant="body1" color="text.secondary" sx={{mt:1}}>
+      Enter guidelines, rules, regulations, or directions for your service
+      </Typography>
+      <Editor
+        //  toolbarClassName="toolbarClassName"
+        //  wrapperClassName="wrapperClassName"
+        toolbarStyle={{backgroundColor: '#3D4E5D'}}
+        placeholder='Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua....
+        
+        Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua....'
+        wrapperStyle={{ width: 800, height: 500, border: "1px solid black", overflow: "hidden"}}
+      />
+      </Box>
+      
+      </Paper>
       
     </React.Fragment>
   );

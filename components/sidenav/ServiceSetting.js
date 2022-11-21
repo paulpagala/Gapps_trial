@@ -118,7 +118,7 @@ export default function ServiceSetting() {
             </RadioGroup>
           </FormControl>
           
-          { serviceFee === "requireCheckInAndOut" ?  (
+          { serviceFee === "requireCheckInAndOut" || serviceFee === "requireCheckin" ?  (
             <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
             
             <FormControlLabel
