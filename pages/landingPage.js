@@ -5,15 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link } from '@mui/material';
-import { useRouter } from "next/router";
+// import { Link } from '@mui/material';
+import { useRouter } from "next/router"
 import Box from '@mui/material/Box';
 
 
 export default function ImgMediaCard() {
+ 
   const router = useRouter();
-
   function redirect(){
+   
     router.push("/setupChecklist")
   }
   
