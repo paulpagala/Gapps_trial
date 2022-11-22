@@ -24,7 +24,8 @@ import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 // import Checkbox from '@mui/material/Checkbox';
 import InputAdornment from '@mui/material/InputAdornment';
-import {Editor}  from "react-draft-wysiwyg";
+// import {Editor}  from "react-draft-wysiwyg";
+import {Editor} from "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg"
 import TextField from '@mui/material/TextField';
 
 
