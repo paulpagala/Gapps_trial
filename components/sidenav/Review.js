@@ -25,8 +25,8 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 // import Checkbox from '@mui/material/Checkbox';
 import InputAdornment from '@mui/material/InputAdornment';
 // import {Editor}  from "react-draft-wysiwyg";
-import {Editor} from "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg"
-import TextField from '@mui/material/TextField';
+// import {Editor} from "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg";
+// import TextField from '@mui/material/TextField';
 
 
 
@@ -175,7 +175,7 @@ export default function AddressForm() {
     <Typography variant="body1" color="text.secondary" sx={{mt:1}}>
       Enter guidelines, rules, regulations, or directions for your service
       </Typography>
-      <Editor
+      {/* <Editor
         //  toolbarClassName="toolbarClassName"
         //  wrapperClassName="wrapperClassName"
         toolbarStyle={{backgroundColor: '#3D4E5D'}}
@@ -189,7 +189,7 @@ export default function AddressForm() {
         sed do eiusmod tempor incididunt ut 
         labore et dolore magna aliqua....'
         wrapperStyle={{ width: 800, height: 500, border: "1px solid black", overflow: "hidden"}}
-      />
+      /> */}
       </Box>
       
       </Paper>
