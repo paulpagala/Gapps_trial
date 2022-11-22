@@ -2,14 +2,25 @@
 import '../styles/landingPage.css'
 import '../styles/globals.css'
 import ResponsiveAppBar from "./navbar"
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import FSElliotPro from '../fonts/fs-elliot-pro-cufonfonts/FSElliotProRegular.otf';
 
 
 function MyApp({ Component, pageProps }) {
+  
+  const theme = createTheme({
+    typography: {
+      allVariants: {
+        fontFamily: 'FS Elliot Pro',
+      },
+    },
+  });
+
   return (
-    <div>
+    <ThemeProvider theme={theme}>
     <ResponsiveAppBar />
     <Component {...pageProps} />
-    </div>
+   </ThemeProvider>
   
   );
 }

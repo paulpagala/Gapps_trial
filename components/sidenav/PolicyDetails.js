@@ -35,19 +35,19 @@ export default function PolicyDetails() {
     setAddParking(event.target.value);
   };
 
-  const [parkingArea, setParkingArea] = React.useState('MC Home Depot');
+  const [parkingArea, setParkingArea] = React.useState('');
 
   const handleChangeParkingArea = (event) => {
     setParkingArea(event.target.value);
   };
 
-  const [changeAddress, setChangeAddress] = React.useState('32nd St, Justicia Dr, Taguig, 1634 Metro Manila');
+  const [changeAddress, setChangeAddress] = React.useState('');
 
   const handleChangeAddress = (event) => {
     setChangeAddress(event.target.value);
   };
 
-  const [areaFloor, setAreaFloor] = React.useState('0');
+  const [areaFloor, setAreaFloor] = React.useState('');
 
   const handleChangeAreaFloor = (event) => {
     setAreaFloor(event.target.value);
@@ -102,18 +102,19 @@ export default function PolicyDetails() {
 
   let element = arrayData.map((value, index) =>
   
-  <Box key={index }sx={{mb:3,display:'flex',flexDirection:"row", alignItems: 'center', alignContent: 'stretch' }}>
+  <Box key={index }sx={{mb:3,display:'flex',flexDirection:"column", alignItems: 'left', alignContent: 'stretch', ml:2 }}>
   <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom>Slot name {index}</Typography>
-  <Box>
+  
     <TextField
       id="outlined-parkingName"
-      // label="Enter Slot Name"
+      // label=""
       value={parkingName}
       onChange={handleChangeParkingName}
       variant="outlined"
-      sx={{backgroundColor:'white', width:326, ml:2}}
+      sx={{backgroundColor:'white', width:326}}
+      placeholder="Enter Slot Name"
   />
-  </Box>
+  
 </Box>);
 
 console.log(parkingName)
@@ -146,7 +147,7 @@ console.log(parkingName)
     { addParking === "list" ?  (
     <Paper variant="outlined" sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
       <Box sx={{ml:3}}>
-        <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom> Parking Area name </Typography>
+        <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom> Parking area name </Typography>
         <TextField
             id="outlined-address"
             // label="Address (optional)"
@@ -154,6 +155,7 @@ console.log(parkingName)
             onChange={handleChangeParkingArea}
             variant="outlined"
             sx={{width:500}}
+            placeholder="Enter parking area name"
         />
       </Box>
       <Box sx={{ml:3, mt:2}}>
@@ -165,6 +167,7 @@ console.log(parkingName)
             onChange={handleChangeAddress}
             variant="outlined"
             sx={{width:900}}
+            placeholder="Enter address"
         />
       </Box>
       <Paper variant="outlined" sx={{ mr:3, ml: 3, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
@@ -175,32 +178,20 @@ console.log(parkingName)
               value={areaFloor}
               onChange={handleChangeAreaFloor}
               variant="outlined"
+              placeholder="E.g. P1"
           />
        
         <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom>Number of slots</Typography>
-        <FormControl sx={{ ml:0, width:100}}>
-          <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth-label"
+        <TextField
+          id="outlined-number"
+          label="Number of Slots"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
           value={numberOfSlots}
           onChange={handleChangeNumberOfSlots}
-                        // label=""
-        >
-          <MenuItem value="">
-          <em>None</em>
-          </MenuItem>
-          <MenuItem value={1}>1</MenuItem>
-          <MenuItem value={2}>2</MenuItem>
-          <MenuItem value={3}>3</MenuItem>
-          <MenuItem value={4}>4</MenuItem>
-          <MenuItem value={5}>5</MenuItem>
-          <MenuItem value={6}>6</MenuItem>
-          <MenuItem value={7}>7</MenuItem>
-          <MenuItem value={8}>8</MenuItem>
-          <MenuItem value={9}>9</MenuItem>
-          <MenuItem value={10}>10</MenuItem>
-          </Select>
-        </FormControl>
+        />
         <br/>
         <FormControlLabel
                     control={
@@ -212,27 +203,32 @@ console.log(parkingName)
         {slots ? (
         <Paper variant="outlined" sx={{ mr:5, ml: 5, my: { md: 1, lg: 3 }, p: { md: 2, lg: 3 }, backgroundColor:'#EFEFEF'}}>
            {element}
+           
         </Paper>) 
         : 
         null}
       </Paper>
     </Paper>
     ) 
-      : (
-      <Paper variant="outlined" sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
+      : null
+      }
+
+    {addParking === 'bulk' ? ( 
+    
+    <Paper variant="outlined" sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
       
-      <Typography component="B1" variant="B1"  sx={{color: 'black'}} gutterBottom>
+      <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
        Upload list of available parking areas
       </Typography>
-      <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
+      <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
         Missed the parking areas list template we shared?
       </Typography>
       <Link href='google.com'>Download template</Link>
       <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
           <Typography sx={{ml:3, mt:2}}>File uploaded</Typography>
-          <input type="file" accept=".xlsx,.xls,.csv"> Upload File</input>
+          {/* <input type="file" accept=".xlsx,.xls,.csv"> Upload File</input> */}
       </Paper>
-      </Paper>) }
+      </Paper>) : null}
          
     </React.Fragment>
   );

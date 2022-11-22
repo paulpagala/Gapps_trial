@@ -130,7 +130,7 @@ export default function PrimarySearchAppBar() {
             />
           <Box sx={{ flexGrow: 1  }} /> 
           <Box  sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -138,14 +138,14 @@ export default function PrimarySearchAppBar() {
             sx={{ ml: 1 }}
           >
             <SettingsIcon  sx={{ color: 'black', fontSize: 50, mt:0.5,mr:3}}/>
-          </IconButton>
-          <IconButton size="large" aria-label="Application Icons" color="inherit">
+          </IconButton> */}
+          {/* <IconButton size="large" aria-label="Application Icons" color="inherit">
             <AppsIcon sx={{ color: 'black', fontSize: 50, mt:0.5,mr:3 }}/>
-          </IconButton>
+          </IconButton> */}
           <div>
             {/* placeholder for now until we do the sso */}
             <p style={{color: '#030303',top:10, fontSize:18, textAlign:'right',position:'relative'}}>
-              Tricia Gonzales 
+              Beatrix Gonzales 
             </p>
             <p style={{color: '#848484', top:-10, fontSize:14, textAlign:'right',position:'relative'}}>
               Service Admin

@@ -24,27 +24,28 @@ opacity: 1;
 
 .box {
     position: absolute;
-    left: 30%;
+    left: 20%;
     top: 33%;
     display: flex;
     flex-direction: column;
 }
 
 .sso_container {
-    width: 536px;
-    height: 65px;
+    width: 267px;
+    height: 50px;
     background: #436ED0 0% 0% no-repeat padding-box;
     border-radius: 10px;
     opacity: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 5%;
 }
 
 .google_logo_container {
-margin-left: 2px;
-width: 65px;
-height: 61px;
+margin-left: 1px;
+width: 45px;
+height: 48px;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border-radius: 9px 0px 0px 9px;
 opacity: 1;
@@ -57,8 +58,8 @@ justify-content: center;
 width: 246px;
 height: 25px;
 /* UI Properties */
-margin-left: 130px;
-font: normal normal normal 20px/14px FS Elliot Pro;
+margin-left: auto;
+font: normal normal normal 14px/9px FS Elliot Pro;
 letter-spacing: 0px;
 color: #FFFFFF;
 opacity: 1;

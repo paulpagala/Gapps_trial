@@ -1,5 +1,7 @@
-<svg width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="48" height="48" fill="white" fill-opacity="0.01"/>
-<path d="M24 4L29.2533 7.83204L35.7557 7.81966L37.7533 14.0077L43.0211 17.8197L41 24L43.0211 30.1803L37.7533 33.9923L35.7557 40.1803L29.2533 40.168L24 44L18.7467 40.168L12.2443 40.1803L10.2467 33.9923L4.97887 30.1803L7 24L4.97887 17.8197L10.2467 14.0077L12.2443 7.81966L18.7467 7.83204L24 4Z" fill="#2F88FF" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 24L22 29L32 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <g id="success-svgrepo-com" transform="translate(-0.202 0.033)">
+    <rect id="Rectangle_9487" data-name="Rectangle 9487" width="96" height="96" transform="translate(0.202 -0.033)" fill="rgba(255,255,255,0.01)"/>
+    <path id="Path_4722" data-name="Path 4722" d="M43.154,4,53.7,11.691l13.05-.025,4.009,12.419,10.572,7.651-4.056,12.4,4.056,12.4L70.756,64.194,66.747,76.613,53.7,76.588,43.154,84.279,32.611,76.588l-13.05.025L15.551,64.194,4.979,56.543l4.056-12.4-4.056-12.4,10.572-7.651L19.56,11.666l13.05.025Z" transform="translate(5.014 4.028)" fill="#2f88ff" stroke="#5badfa" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path id="Path_4723" data-name="Path 4723" d="M17,29.035,27.035,39.07,47.1,19" transform="translate(17.119 19.133)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  </g>
 </svg>

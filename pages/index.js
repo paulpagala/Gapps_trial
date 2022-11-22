@@ -15,8 +15,10 @@ export default function landingPage() {
     <div className='background'>
       <div className='top'></div>
       <div className='box'>
-      <Image src={company_logo_source} alt="company_logo" width={175} height={65}/>
-      <Image src={app_logo_source} alt="app_logo" width={347} height={107}/>
+      <Image src={company_logo_source} alt="company_logo" width={124} height={46}/>
+      <div style={{marginTop:'5%'}}>
+      <Image src={app_logo_source} alt="app_logo" width={247} height={76}/>
+      </div>
       <div className='sso_container'>
         <div className='google_logo_container'>
             <Image src={google_logo_source} alt="google_logo" width={32} height={32}/>

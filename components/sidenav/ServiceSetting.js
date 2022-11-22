@@ -54,8 +54,9 @@ export default function ServiceSetting() {
     <React.Fragment>
 
       <Paper variant="outlined" sx={{ my: { xs: 3, md: 5 }, p: { xs: 2, md: 3 }}}>
-        <Box>
-          <Typography component="B1" variant="B1"  sx={{color: 'black',ml:3,mt:2, fontWeight: 'bold' }} gutterBottom>Service Schedule </Typography>
+          <Box sx={{display:'flex',flexDirection:"column"}}>
+          <Typography component="b1" variant="b1"  sx={{color: 'black',ml:3,mt:2, fontWeight: 'bold' }} gutterBottom>Service Schedule </Typography>
+          <Typography component="subtitle1" variant="subtitle1"  sx={{color: '#6F8191',ml:3,mt:-1 }} gutterBottom>Set days when the service will be able</Typography> 
           <Box>
           <ToggleButtonGroup
               value={weekday}
@@ -89,7 +90,7 @@ export default function ServiceSetting() {
           </Box>
         </Box>
         <Box sx={{ml:3, mt:2}}>
-            <Typography component="B1" variant="B1"  sx={{color: 'black',display:'block'}} gutterBottom>
+            <Typography component="b1" variant="b1"  sx={{color: 'black',display:'block'}} gutterBottom>
               Set booking schedule
             </Typography>
             <Box>
@@ -128,7 +129,7 @@ export default function ServiceSetting() {
                     label="Accomplish health declariton before check-in"
                   />
             <Box>
-            <Typography component="B1" variant="B1"  sx={{color: 'black'}} gutterBottom>
+            <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
               Latest check-in time 
             </Typography>
             </Box>
@@ -157,7 +158,7 @@ export default function ServiceSetting() {
                   <MenuItem value={'12:00 NN'}>12:00 NN</MenuItem>
                 </Select>
             </FormControl>
-            <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
+            <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
                 Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
             </Typography>
           </Paper>) : null }

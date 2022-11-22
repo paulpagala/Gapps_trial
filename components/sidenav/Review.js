@@ -23,8 +23,11 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 // import Checkbox from '@mui/material/Checkbox';
-import { Editor } from "react-draft-wysiwyg";
-import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import InputAdornment from '@mui/material/InputAdornment';
+// import {Editor}  from "react-draft-wysiwyg";
+// import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import TextField from '@mui/material/TextField';
+
 
 
 
@@ -47,7 +50,7 @@ export default function AddressForm() {
     setcostOfServiceBooking(event.target.value);
   };
 
-  const [cancelDeadline, setCancelDeadline] = React.useState(2);
+  const [cancelDeadline, setCancelDeadline] = React.useState(90);
 
   const handleChangeCancelDeadline = (event) => {
     setCancelDeadline(event.target.value);
@@ -76,7 +79,7 @@ export default function AddressForm() {
               onChange={handleChangeCostOfServiceBooking}
             >
               <FormControlLabel value="free" control={<Radio />} label="Free of charge" />
-              <FormControlLabel value="paid" control={<Radio />} label="Paid" />
+              <FormControlLabel value="paid" control={<Radio />} label="Paid"/>
             </RadioGroup>
           </FormControl>
 
@@ -84,10 +87,10 @@ export default function AddressForm() {
           (<Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
           
               <Box>
-              <Typography component="B1" variant="B1"  sx={{color: 'black'}} gutterBottom>
+              <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
                 Booking Price 
               </Typography>
-              <Typography component="B1" variant="B1"  sx={{color: 'black', ml:22}} gutterBottom>
+              <Typography component="b1" variant="b1"  sx={{color: 'black', ml:27}} gutterBottom>
                 Receiving GCash number wallet
               </Typography>
               </Box>
@@ -100,6 +103,7 @@ export default function AddressForm() {
                   onChange={handleChangePrice}
                   label="Price"
                   sx={{backgroundColor:'white'}}
+                  startAdornment={<InputAdornment position="start">PHP</InputAdornment>}
                 />
               </FormControl>
               <FormControl sx={{ml:6, width:400}} >
@@ -119,71 +123,53 @@ export default function AddressForm() {
           
           <Box>
                 <Box>
-                <Typography component="B1" variant="B1"  sx={{color: 'black', ml:3}} gutterBottom>
+                <Typography component="b1" variant="b1"  sx={{color: 'black', ml:3}} gutterBottom>
                   Earliest date employees can book
                 </Typography>
                 </Box>
                 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-                <FormControl sx={{ my:3, ml: 3.5, minWidth: 100}}>
-                    {/* <InputLabel id="demo-simple-select-autowidth-label">days</InputLabel> */}
-                    <Select
-                      labelId="demo-simple-select-autowidth-label"
-                      id="demo-simple-select-autowidth-label"
-                      value={earliestBook}
-                      onChange={handleChangeEarliestBook}
-                      // label=""
-                    >
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value={2}>2</MenuItem>
-                      <MenuItem value={3}>3</MenuItem>
-                      <MenuItem value={4}>4</MenuItem>
-                      <MenuItem value={5}>5</MenuItem>
-                    </Select>
-                </FormControl>
-                <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'black', ml:3}}>days before the booking</Typography>
+                <TextField
+                  id="outlined-number"
+                  // label="Number of Slots"
+                  type="number"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  value={earliestBook}
+                  onChange={handleChangeEarliestBook}
+                  sx={{width:'86px',ml:3}}
+                />
+                <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'black', ml:3}}>days before the booking</Typography>
               </Box>
           </Box>
          
-          <Box>
+          <Box sx={{mt:2}}>
                 <Box>
-                <Typography component="B1" variant="B1"  sx={{color: 'black', ml:3}} gutterBottom>
+                <Typography component="b1" variant="b1"  sx={{color: 'black', ml:3}} gutterBottom>
                   Cancellation deadline
                 </Typography>
                 </Box>
                 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-                <FormControl sx={{ my:3, ml: 3.5, minWidth: 100,  }}>
-                    {/* <InputLabel id="demo-simple-select-autowidth-label">days</InputLabel> */}
-                    <Select
-                      labelId="demo-simple-select-autowidth-label"
-                      id="demo-simple-select-autowidth-label"
-                      value={cancelDeadline}
-                      onChange={handleChangeCancelDeadline}
-                      // label=""
-                    >
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value={90}>90</MenuItem>
-                      <MenuItem value={120}>120</MenuItem>
-                      <MenuItem value={150}>150</MenuItem>
-                      <MenuItem value={180}>180</MenuItem>
-                      <MenuItem value={210}>210</MenuItem>
-                      <MenuItem value={240}>240</MenuItem>
-                      <MenuItem value={270}>270</MenuItem>
-                      <MenuItem value={300}>300</MenuItem>
-                    </Select>
-                </FormControl>
-                <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'black', ml:3}}>minutes before the booking</Typography>
+                <TextField
+                  id="outlined-number"
+                  // label="Number of Slots"
+                  type="number"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  value={cancelDeadline}
+                  onChange={handleChangeCancelDeadline}
+                  sx={{width:'86px',ml:3}}
+                />
+                <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'black', ml:3}}>minutes before the booking</Typography>
                 </Box>
-                <Typography component="Subtitle1" variant="Subtitle1"  sx={{color: 'grey',display: 'block', ml:3}} gutterBottom>
-                    Employees can cancel <strong>1 hour and 30 minutes</strong> before the booking
+                <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block', ml:3}} gutterBottom>
+                    Employees can cancel <strong>{(cancelDeadline)/60} hour and {(cancelDeadline)%60} minutes </strong>  before the booking
                 </Typography>
             </Box>
     </Paper>
     
-    <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
+    {/* <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
     <Box sx={{ml:3}}>
     <Typography  sx={{fontWeight: 'bold'}}>Policies</Typography>  
     <Typography variant="body1" color="text.secondary" sx={{mt:1}}>
@@ -207,7 +193,7 @@ export default function AddressForm() {
       </Box>
       
       </Paper>
-      
+       */}
     </React.Fragment>
   );
 }
