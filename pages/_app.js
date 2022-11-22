@@ -4,7 +4,8 @@ import '../styles/globals.css'
 import ResponsiveAppBar from "./navbar"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import FSElliotPro from '../fonts/fs-elliot-pro-cufonfonts/FSElliotProRegular.otf';
-import "../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+// import "../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
 
 function MyApp({ Component, pageProps }) {
