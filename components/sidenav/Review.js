@@ -24,8 +24,7 @@ import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 // import Checkbox from '@mui/material/Checkbox';
 import InputAdornment from '@mui/material/InputAdornment';
-// import {Editor}  from "react-draft-wysiwyg";
-// import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import {Editor}  from "react-draft-wysiwyg";
 import TextField from '@mui/material/TextField';
 
 
@@ -169,7 +168,7 @@ export default function AddressForm() {
             </Box>
     </Paper>
     
-    {/* <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
+    <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
     <Box sx={{ml:3}}>
     <Typography  sx={{fontWeight: 'bold'}}>Policies</Typography>  
     <Typography variant="body1" color="text.secondary" sx={{mt:1}}>
@@ -193,7 +192,7 @@ export default function AddressForm() {
       </Box>
       
       </Paper>
-       */}
+      
     </React.Fragment>
   );
 }
