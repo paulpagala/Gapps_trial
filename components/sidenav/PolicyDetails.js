@@ -30,7 +30,7 @@ import Input from '@mui/material/Input';
 
 
 export default function PolicyDetails() {
-  const [addParking, setAddParking] = React.useState('list');
+  const [addParking, setAddParking] = React.useState('');
 
   const handleChangeAddParking = (event) => {
     setAddParking(event.target.value);
@@ -54,14 +54,14 @@ export default function PolicyDetails() {
     setAreaFloor(event.target.value);
   };
 
-  const [numberOfSlots, setNumberOfSlots] = React.useState(5);
+  const [numberOfSlots, setNumberOfSlots] = React.useState();
   const handleChangeNumberOfSlots = (event) => {
     setNumberOfSlots(event.target.value);
   };
 
 
   const [state, setState] = React.useState({
-    slots: true,
+    slots: false,
   });
 
   const handleChangeSlots = (event) => {
@@ -104,7 +104,7 @@ export default function PolicyDetails() {
   let element = arrayData.map((value, index) =>
   
   <Box key={index }sx={{mb:3,display:'flex',flexDirection:"column", alignItems: 'left', alignContent: 'stretch', ml:2 }}>
-  <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom>Slot name {index}</Typography>
+  <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom>Slot name {index+1}</Typography>
   
     <TextField
       id="outlined-parkingName"
@@ -240,7 +240,6 @@ const [dragActive, setDragActive] = React.useState(false);
         {slots ? (
         <Paper variant="outlined" sx={{ mr:5, ml: 5, my: { md: 1, lg: 3 }, p: { md: 2, lg: 3 }, backgroundColor:'#EFEFEF'}}>
            {element}
-           
         </Paper>) 
         : 
         null}

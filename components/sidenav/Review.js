@@ -33,7 +33,7 @@ import TextField from '@mui/material/TextField';
 
 
 export default function AddressForm() {
-  const [price, setPrice] = React.useState(0);
+  const [price, setPrice] = React.useState();
   const handleChangePrice = (event) => {
   setPrice(event.target.value);
   };
@@ -44,24 +44,25 @@ export default function AddressForm() {
     setPhoneNumber(event.target.value);
   };
 
-  const [costOfServiceBooking, setcostOfServiceBooking] = React.useState('free');
+  const [costOfServiceBooking, setcostOfServiceBooking] = React.useState('');
 
   const handleChangeCostOfServiceBooking = (event) => {
     setcostOfServiceBooking(event.target.value);
   };
 
-  const [cancelDeadline, setCancelDeadline] = React.useState(90);
+  const [cancelDeadline, setCancelDeadline] = React.useState();
 
   const handleChangeCancelDeadline = (event) => {
     setCancelDeadline(event.target.value);
   };
 
-  const [earliestBook, setEarliestBook] = React.useState(90);
+  const [earliestBook, setEarliestBook] = React.useState();
 
   const handleChangeEarliestBook = (event) => {
     setEarliestBook(event.target.value);
   };
 
+  
   
   return (
     <React.Fragment>
@@ -109,6 +110,7 @@ export default function AddressForm() {
               <FormControl sx={{ml:6, width:400}} >
                 <InputLabel htmlFor="component-outlined">Enter Number</InputLabel>
                 <OutlinedInput
+                  
                   id="component-outlined"
                   value={phoneNumber}
                   onChange={handleChangeNumber}
@@ -164,7 +166,7 @@ export default function AddressForm() {
                 <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'black', ml:3}}>minutes before the booking</Typography>
                 </Box>
                 <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block', ml:3}} gutterBottom>
-                    Employees can cancel <strong>{(cancelDeadline)/60} hour and {(cancelDeadline)%60} minutes </strong>  before the booking
+                    Employees can cancel <strong>{Math.floor((cancelDeadline)/60)} hour and {(cancelDeadline)%60} minutes </strong>  before the booking
                 </Typography>
             </Box>
     </Paper>

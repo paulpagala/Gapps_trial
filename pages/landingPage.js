@@ -26,7 +26,7 @@ export default function ImgMediaCard() {
         component="img"
         alt="bike"
         // height="496"
-        image="Image 8@2x.png"
+        image="Group 7822.png"
         sx={{width:330,backgroundSize: 'cover',}}
       />
       <div style={{marginLeft:51, marginTop:50}}>

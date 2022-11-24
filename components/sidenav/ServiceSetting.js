@@ -18,11 +18,13 @@ import BookingAvailability,{bookingScheduleStart} from '../BookingAvailability';
 export default function ServiceSetting() {
   
 
-  const [weekday, setWeekday] = React.useState(() => ['monday','tuesday','wednesday','thursday','friday']);
+  const [weekday, setWeekday] = React.useState(() => []);
 
   const handleWeekday = (event, newWeekday) => {
     setWeekday(newWeekday);
   };
+
+
   const [state, setState] = React.useState({
       checkin: true,
     
@@ -36,6 +38,21 @@ export default function ServiceSetting() {
   };
  
   const { checkin } = state;
+
+
+  const [stateInAndOut, setStateInAndOut] = React.useState({
+    checkInAndOut: true,
+  
+  });
+
+const handleChangeCheckInAndOut = (event) => {
+  setStateInAndOu({
+    ...stateInAndOut,
+    [event.target.name]: event.target.checked,
+  });
+};
+
+const { checkInAndOut } = stateInAndOut;
     
   
   const [latestBookingSchedule, setLatestBookingSchedule] = React.useState('7:00 AM');
@@ -115,11 +132,7 @@ export default function ServiceSetting() {
             >
               <FormControlLabel value="noCheckin" control={<Radio />} label="No check-in needed" />
               <FormControlLabel value="requireCheckin" control={<Radio />} label="Require check-in only" />
-              <FormControlLabel value="requireCheckInAndOut" control={<Radio />} label="Require check-in and check-out" />
-            </RadioGroup>
-          </FormControl>
-          
-          { serviceFee === "requireCheckInAndOut" || serviceFee === "requireCheckin" ?  (
+              { serviceFee === "requireCheckin" ?  (
             <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
             
             <FormControlLabel
@@ -162,6 +175,54 @@ export default function ServiceSetting() {
                 Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
             </Typography>
           </Paper>) : null }
+              <FormControlLabel value="requireCheckInAndOut" control={<Radio />} label="Require check-in and check-out" />
+              { serviceFee === "requireCheckInAndOut"  ?  (
+            <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
+            
+            <FormControlLabel
+                    control={
+                      <Checkbox checked={checkInAndOut} onChange={handleChangeCheckInAndOut} name="checkin" />
+                    }
+                    label="Accomplish health declariton before check-in"
+                  />
+            <Box>
+            <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
+              Latest check-in time 
+            </Typography>
+            </Box>
+            <FormControl sx={{ my:3, ml: 3.5, minWidth: 250, display:'inline' }}>
+                {/* <InputLabel id="demo-simple-select-autowidth-label">days</InputLabel> */}
+                <Select
+                  labelId="demo-simple-select-autowidth-label"
+                  id="demo-simple-select-autowidth-label"
+                  value={latestBookingSchedule}
+                  onChange={handleChangeLatestBookingSchedule}
+                  // label=""
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={'7:00 AM'}>7:00 AM</MenuItem>
+                  <MenuItem value={'7:30 AM'}>7:30 AM</MenuItem>
+                  <MenuItem value={'8:00 AM'}>8:00 AM</MenuItem>
+                  <MenuItem value={'8:30 AM'}>8:30 AM</MenuItem>
+                  <MenuItem value={'9:00 AM'}>9:00 AM</MenuItem>
+                  <MenuItem value={'9:30 AM'}>9:30 AM</MenuItem>
+                  <MenuItem value={'10:00 AM'}>10:00 AM</MenuItem>
+                  <MenuItem value={'10:30 AM'}>10:30 AM</MenuItem>
+                  <MenuItem value={'11:00 AM'}>11:00 AM</MenuItem>
+                  <MenuItem value={'11:30 AM'}>11:30 AM</MenuItem>
+                  <MenuItem value={'12:00 NN'}>12:00 NN</MenuItem>
+                </Select>
+            </FormControl>
+            <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
+                Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
+            </Typography>
+          </Paper>) : null }
+            </RadioGroup>
+          </FormControl>
+          
+         
       </Paper>
     </React.Fragment>
   );

@@ -78,11 +78,11 @@ export default function Checkout() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box >
-        <Typography component="h3" variant="h3" align="left" sx={{mt:20, ml:10, color: 'black'}}>
-            Set up Parking Service
+        <Typography component="h3" variant="h3" align="left" sx={{mt:20, ml:15, color: 'black',fontWeight: 'bold'}}>
+            Set up Parking service
         </Typography>
-        <Image src={parking_logo_source} alt="company_logo" width={175} height={65} style={{position: 'absolute', marginTop: 15, width: 60, marginLeft: 80}} />
-        <Box sx={{display: 'flex',flexDirection: 'row', ml: 20,mt:2 }}>
+        <Image src={parking_logo_source} alt="company_logo" width={175} height={65} style={{position: 'absolute', marginTop: 15, width: 60, marginLeft: 120}} />
+        <Box sx={{display: 'flex',flexDirection: 'row', ml:25,mt:2 }}>
           <Typography component="h6" variant="h6"  sx={{color: 'black'}} >
             Company site 
         </Typography>
@@ -90,7 +90,7 @@ export default function Checkout() {
             Description
         </Typography>
         </Box>
-        <Box sx={{display: 'flex',flexDirection: 'row', ml: 20 }}> 
+        <Box sx={{display: 'flex',flexDirection: 'row', ml: 25 }}> 
            <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey'}} gutterBottom>
            The Globe Tower 
         </Typography>
