@@ -5,11 +5,11 @@ import app_logo_source from "/public/GAccess-colored.png";
 import google_logo_source from "/public/img_landingpage/brands-and-logotypes.png";
 import { useRouter } from 'next/router'
 
-export default function landingPage() {
+export default function LandingPage() {
   const router = useRouter()
   const handleClick = (e) => {
     e.preventDefault()
-    router.push('/landingPage')
+    router.push('/LandingPage')
   }
   return (
     <div className='background'>

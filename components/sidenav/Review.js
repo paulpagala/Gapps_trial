@@ -213,11 +213,11 @@ Object.assign(defaultTheme, {
       <Box sx={{width:'778px', height:'446px', mt:2}}>
       
       <ThemeProvider theme={defaultTheme}>
-      <MUIRichTextEditor
+      {/* <MUIRichTextEditor
       label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       onSave={save}
       inlineToolbar={true}
-    />
+    /> */}
       </ThemeProvider>
       </Box>
     
