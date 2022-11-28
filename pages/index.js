@@ -9,7 +9,7 @@ export default function LandingPage() {
   const router = useRouter()
   const handleClick = (e) => {
     e.preventDefault()
-    router.push('/LandingPage')
+    router.push('/landingPage')
   }
   return (
     <div className='background'>
