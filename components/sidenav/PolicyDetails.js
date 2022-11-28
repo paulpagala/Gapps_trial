@@ -114,38 +114,38 @@ export default function PolicyDetails() {
       
   );
 
-  const [dragActive, setDragActive] = React.useState(false);
-  // ref
-  const inputRef = React.useRef(null);
+  // const [dragActive, setDragActive] = React.useState(false);
+  // // ref
+  // const inputRef = React.useRef(null);
   
-  // handle drag events
-  const handleDrag = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
-    } else if (e.type === "dragleave") {
-      setDragActive(false);
-    }
-  };
+  // // handle drag events
+  // const handleDrag = function(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   if (e.type === "dragenter" || e.type === "dragover") {
+  //     setDragActive(true);
+  //   } else if (e.type === "dragleave") {
+  //     setDragActive(false);
+  //   }
+  // };
   
-  // triggers when file is dropped
-  const handleDrop = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      // handleFiles(e.dataTransfer.files);
-    }
-  };
+  // // triggers when file is dropped
+  // const handleDrop = function(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   setDragActive(false);
+  //   if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+  //     // handleFiles(e.dataTransfer.files);
+  //   }
+  // };
   
-  // triggers when file is selected with click
-  const handleChange = function(e) {
-    e.preventDefault();
-    if (e.target.files && e.target.files[0]) {
-      // handleFiles(e.target.files);
-    }
-  };
+  // // triggers when file is selected with click
+  // const handleChange = function(e) {
+  //   e.preventDefault();
+  //   if (e.target.files && e.target.files[0]) {
+  //     // handleFiles(e.target.files);
+  //   }
+  // };
   
 // triggers the input when the button is clicked
   const onButtonClick = () => {
@@ -216,7 +216,7 @@ export default function PolicyDetails() {
 
   
     {/* { serviceFee === "Paid" ?  (<Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}> */}
-    { addParking === "list" && minimizeParking ?  
+    { addParking === "list"  ?  
         (
         <div>
               <Switch
@@ -225,7 +225,8 @@ export default function PolicyDetails() {
               inputProps={{ 'aria-label': 'controlled' }}
               sx={{ml:138}}
             />
-        <Paper variant="outlined" sx={{ my: { md: 0 , lg: 0 }, p: { md: 2, lg: 3 }}}>
+        {minimizeParking ? (
+          <Paper variant="outlined" sx={{ my: { md: 0 , lg: 0 }, p: { md: 2, lg: 3 }}}>
           <Box sx={{ml:3}}>
             <Typography variant="subtitle1"  sx={{color: 'black'}} gutterBottom> Parking area name </Typography>
             <TextField
@@ -296,6 +297,8 @@ export default function PolicyDetails() {
           </Paper>) : null}
           
         </Paper>
+        ) : null}
+        
         </div>
         ) 
     : null
