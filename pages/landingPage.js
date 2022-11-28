@@ -21,15 +21,15 @@ export default function ImgMediaCard() {
   
   return (
     <Box sx={{display:'flex',justifyContent:'center', mt: 35}}>
-    <Card sx={{ maxWidth: 950,height:400,display:'flex',flexDirection: 'row'}}>
+    <Card sx={{ maxWidth: 800,height:400,display:'flex',flexDirection: 'row'}}>
         <CardMedia
         component="img"
         alt="bike"
         // height="496"
         image="Group 7822.png"
-        sx={{width:330,backgroundSize: 'cover',}}
+        sx={{width:450, backgroundPosition:'center 20%'}}
       />
-      <div style={{marginLeft:51, marginTop:50}}>
+      <div style={{marginLeft:30, marginTop:50}}>
       <CardContent >
         <Typography gutterBottom variant="h4" component="div" sx={{fontWeight: 'bold'}}>
         Welcome to G Access, Tria!
@@ -45,7 +45,7 @@ export default function ImgMediaCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="large" variant="contained" sx={{width:211,height:65,backgroundColor:'#5BADFA'}} onClick={redirect}>Start set up</Button>
+        <Button size="large" variant="contained" sx={{width:211,height:65,backgroundColor:'#5BADFA'}} onClick={redirect}><Typography>Get started</Typography></Button>
       </CardActions>
       </div>
     </Card>

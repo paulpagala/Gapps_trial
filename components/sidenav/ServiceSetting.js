@@ -12,6 +12,7 @@ import Checkbox from '@mui/material/Checkbox';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
 import BookingAvailability,{bookingScheduleStart} from '../BookingAvailability';
+import { FamilyRestroomRounded } from '@mui/icons-material';
 
 
 
@@ -25,37 +26,50 @@ export default function ServiceSetting() {
   };
 
 
-  const [state, setState] = React.useState({
-      checkin: true,
+  // const [state, setState] = React.useState({
+  //     checkin: false,
     
-    });
+  //   });
   
-  const handleChangeCheckin = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
-  };
+  // const handleChangeCheckin = (event) => {
+  //   setState({
+  //     ...state,
+  //     [event.target.name]: event.target.checked,
+  //   });
+  // };
  
-  const { checkin } = state;
+  // const { checkin } = state;
+
+  const [checkIn, setCheckIn] = React.useState(false);
+
+  const handleChangeCheckIn = (event) => {
+    setCheckIn(event.target.checked);
+  };
+
+  const [checkInAndOut, setCheckInAndOut] = React.useState(false);
+
+  const handleChangeCheckInAndOut= (event) => {
+    setCheckInAndOut(event.target.checked);
+  };
 
 
-  const [stateInAndOut, setStateInAndOut] = React.useState({
-    checkInAndOut: true,
+
+//   const [stateInAndOut, setStateInAndOut] = React.useState({
+//     checkInAndOut: false,
   
-  });
+//   });
 
-const handleChangeCheckInAndOut = (event) => {
-  setStateInAndOu({
-    ...stateInAndOut,
-    [event.target.name]: event.target.checked,
-  });
-};
+// const handleChangeCheckInAndOut = (event) => {
+//   setStateInAndOut({
+//     ...stateInAndOut,
+//     [event.target.name]: event.target.checked,
+//   });
+// };
 
-const { checkInAndOut } = stateInAndOut;
+// const { checkInAndOut } = stateInAndOut;
     
   
-  const [latestBookingSchedule, setLatestBookingSchedule] = React.useState('7:00 AM');
+  const [latestBookingSchedule, setLatestBookingSchedule] = React.useState();
   const handleChangeLatestBookingSchedule = (event) => {
     setLatestBookingSchedule(event.target.value);
   };
@@ -65,7 +79,7 @@ const { checkInAndOut } = stateInAndOut;
     setServiceFee(event.target.value);
   };
 
- console.log(bookingScheduleStart)
+//  console.log(bookingScheduleStart)
   
   return (
     <React.Fragment>
@@ -121,6 +135,8 @@ const { checkInAndOut } = stateInAndOut;
             </Box>
         </Box>
       </Paper>
+
+
       <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
           <Typography sx={{ml:3, fontWeight: 'bold' }}>Check-in options</Typography>
           <FormControl sx={{ml:3, display:'block'}}>
@@ -131,57 +147,60 @@ const { checkInAndOut } = stateInAndOut;
               onChange={handleChangeServiceFee}
             >
               <FormControlLabel value="noCheckin" control={<Radio />} label="No check-in needed" />
+
+
               <FormControlLabel value="requireCheckin" control={<Radio />} label="Require check-in only" />
               { serviceFee === "requireCheckin" ?  (
-            <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
-            
-            <FormControlLabel
-                    control={
-                      <Checkbox checked={checkin} onChange={handleChangeCheckin} name="checkin" />
-                    }
-                    label="Accomplish health declariton before check-in"
-                  />
-            <Box>
-            <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
-              Latest check-in time 
-            </Typography>
-            </Box>
-            <FormControl sx={{ my:3, ml: 3.5, minWidth: 250, display:'inline' }}>
-                {/* <InputLabel id="demo-simple-select-autowidth-label">days</InputLabel> */}
-                <Select
-                  labelId="demo-simple-select-autowidth-label"
-                  id="demo-simple-select-autowidth-label"
-                  value={latestBookingSchedule}
-                  onChange={handleChangeLatestBookingSchedule}
-                  // label=""
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={'7:00 AM'}>7:00 AM</MenuItem>
-                  <MenuItem value={'7:30 AM'}>7:30 AM</MenuItem>
-                  <MenuItem value={'8:00 AM'}>8:00 AM</MenuItem>
-                  <MenuItem value={'8:30 AM'}>8:30 AM</MenuItem>
-                  <MenuItem value={'9:00 AM'}>9:00 AM</MenuItem>
-                  <MenuItem value={'9:30 AM'}>9:30 AM</MenuItem>
-                  <MenuItem value={'10:00 AM'}>10:00 AM</MenuItem>
-                  <MenuItem value={'10:30 AM'}>10:30 AM</MenuItem>
-                  <MenuItem value={'11:00 AM'}>11:00 AM</MenuItem>
-                  <MenuItem value={'11:30 AM'}>11:30 AM</MenuItem>
-                  <MenuItem value={'12:00 NN'}>12:00 NN</MenuItem>
-                </Select>
-            </FormControl>
-            <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
-                Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
-            </Typography>
-          </Paper>) : null }
+                <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
+                
+                <FormControlLabel
+                        control={
+                          <Checkbox checked={checkIn} onChange={handleChangeCheckIn} name="checkin" />
+                        }
+                        label="Accomplish health declariton before check-in"
+                      />
+                <Box>
+                <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
+                  Latest check-in time 
+                </Typography>
+                </Box>
+                <FormControl sx={{ my:3, ml: 3.5, minWidth: 250, display:'inline' }}>
+                    {/* <InputLabel id="demo-simple-select-autowidth-label">days</InputLabel> */}
+                    <Select
+                      labelId="demo-simple-select-autowidth-label"
+                      id="demo-simple-select-autowidth-label"
+                      value={latestBookingSchedule}
+                      onChange={handleChangeLatestBookingSchedule}
+                      // label=""
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
+                      </MenuItem>
+                      <MenuItem value={'7:00 AM'}>7:00 AM</MenuItem>
+                      <MenuItem value={'7:30 AM'}>7:30 AM</MenuItem>
+                      <MenuItem value={'8:00 AM'}>8:00 AM</MenuItem>
+                      <MenuItem value={'8:30 AM'}>8:30 AM</MenuItem>
+                      <MenuItem value={'9:00 AM'}>9:00 AM</MenuItem>
+                      <MenuItem value={'9:30 AM'}>9:30 AM</MenuItem>
+                      <MenuItem value={'10:00 AM'}>10:00 AM</MenuItem>
+                      <MenuItem value={'10:30 AM'}>10:30 AM</MenuItem>
+                      <MenuItem value={'11:00 AM'}>11:00 AM</MenuItem>
+                      <MenuItem value={'11:30 AM'}>11:30 AM</MenuItem>
+                      <MenuItem value={'12:00 NN'}>12:00 NN</MenuItem>
+                    </Select>
+                </FormControl>
+                <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
+                    Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
+                </Typography>
+                </Paper>) : null }
+
+                
               <FormControlLabel value="requireCheckInAndOut" control={<Radio />} label="Require check-in and check-out" />
               { serviceFee === "requireCheckInAndOut"  ?  (
             <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
-            
             <FormControlLabel
                     control={
-                      <Checkbox checked={checkInAndOut} onChange={handleChangeCheckInAndOut} name="checkin" />
+                      <Checkbox checked={checkInAndOut} onChange={handleChangeCheckInAndOut}  inputProps={{ 'aria-label': 'controlled' }} name="checkInandOut" />
                     }
                     label="Accomplish health declariton before check-in"
                   />
@@ -218,7 +237,9 @@ const { checkInAndOut } = stateInAndOut;
             <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block'}} gutterBottom>
                 Employees must check in by {latestBookingSchedule}. If not checked in before this time, booking will be forfeited.
             </Typography>
-          </Paper>) : null }
+            </Paper>) : null }
+
+
             </RadioGroup>
           </FormControl>
           

@@ -16,6 +16,9 @@ function MyApp({ Component, pageProps }) {
       allVariants: {
         fontFamily: 'FS Elliot Pro',
       },
+      button: {
+        textTransform: 'none'
+      }
     },
   });
 

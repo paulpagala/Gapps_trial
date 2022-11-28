@@ -27,6 +27,11 @@ import InputAdornment from '@mui/material/InputAdornment';
 // import {Editor}  from "react-draft-wysiwyg";
 // import {Editor} from "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg";
 import TextField from '@mui/material/TextField';
+import MUIRichTextEditor from "mui-rte";
+import ReactDOM from "react-dom";
+// import Box from '@mui/material/Box'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+// import { borderRadius, color, padding } from '@mui/system';
 
 
 
@@ -62,7 +67,35 @@ export default function AddressForm() {
     setEarliestBook(event.target.value);
   };
 
-  
+  const save = (data) => {
+    console.log(data);
+  };
+
+  console.log(save)
+
+  const defaultTheme = createTheme()
+
+Object.assign(defaultTheme, {
+    overrides: {
+        MUIRichTextEditor: {
+            root: {
+                marginTop:-5,
+                width: "100%",
+                backgroundColor:'#3D4E5D',
+                borderRadius:5,
+                color: '#3D4E5D'
+            },
+            editor: {
+                border: "1px solid black",
+                backgroundColor:'white',
+                width:'778px',
+                height:'400px',
+               
+            }
+        }
+    }
+})
+
   
   return (
     <React.Fragment>
@@ -86,7 +119,6 @@ export default function AddressForm() {
 
           {costOfServiceBooking === 'paid'?
           (<Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
-          
               <Box>
               <Typography component="b1" variant="b1"  sx={{color: 'black'}} gutterBottom>
                 Booking Price 
@@ -105,6 +137,7 @@ export default function AddressForm() {
                   label="Price"
                   sx={{backgroundColor:'white'}}
                   startAdornment={<InputAdornment position="start">PHP</InputAdornment>}
+                  error = {typeof price === "string" ? false : true}
                 />
               </FormControl>
               <FormControl sx={{ml:6, width:400}} >
@@ -165,7 +198,7 @@ export default function AddressForm() {
                 />
                 <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'black', ml:3}}>minutes before the booking</Typography>
                 </Box>
-                <Typography component="subtitle1" variant="subtitle1"  sx={{color: 'grey',display: 'block', ml:3}} gutterBottom>
+                <Typography component="subtitle1" variant="subtitle1"  sx={{color: '#6F8191',display: 'block', ml:3}} gutterBottom>
                     Employees can cancel <strong>{Math.floor((cancelDeadline)/60)} hour and {(cancelDeadline)%60} minutes </strong>  before the booking
                 </Typography>
             </Box>
@@ -174,25 +207,21 @@ export default function AddressForm() {
     <Paper variant="outlined"  sx={{ my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }}}>
     <Box sx={{ml:3}}>
     <Typography  sx={{fontWeight: 'bold'}}>Policies</Typography>  
-    <Typography variant="body1" color="text.secondary" sx={{mt:1}}>
+    <Typography variant="body1" color="#6F8191" sx={{mt:1}}>
       Enter guidelines, rules, regulations, or directions for your service
       </Typography>
-      {/* <Editor
-        //  toolbarClassName="toolbarClassName"
-        //  wrapperClassName="wrapperClassName"
-        toolbarStyle={{backgroundColor: '#3D4E5D'}}
-        placeholder='Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut 
-        labore et dolore magna aliqua....
-        
-        Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut 
-        labore et dolore magna aliqua....'
-        wrapperStyle={{ width: 800, height: 500, border: "1px solid black", overflow: "hidden"}}
-      /> */}
+      <Box sx={{width:'778px', height:'446px', mt:2}}>
+      
+      <ThemeProvider theme={defaultTheme}>
+      <MUIRichTextEditor
+      label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      onSave={save}
+      inlineToolbar={true}
+    />
+      </ThemeProvider>
       </Box>
+    
+    </Box>
       
       </Paper>
       
