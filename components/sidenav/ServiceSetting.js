@@ -86,7 +86,7 @@ export default function ServiceSetting() {
 
       <Paper variant="outlined" sx={{ my: { xs: 3, md: 5 }, p: { xs: 2, md: 3 }}}>
           <Box sx={{display:'flex',flexDirection:"column"}}>
-          <Typography component="b1" variant="b1"  sx={{color: 'black',ml:3,mt:2, fontWeight: 'bold' }} gutterBottom>Service Schedule </Typography>
+          <Typography component="b1" variant="b1"  sx={{color: 'black',ml:3,mt:2, fontWeight: 'bold' }} gutterBottom>Service schedule </Typography>
           <Typography component="subtitle1" variant="subtitle1"  sx={{color: '#6F8191',ml:3,mt:-1 }} gutterBottom>Set days when the service will be able</Typography> 
           <Box>
           <ToggleButtonGroup
@@ -151,7 +151,7 @@ export default function ServiceSetting() {
 
               <FormControlLabel value="requireCheckin" control={<Radio />} label="Require check-in only" />
               { serviceFee === "requireCheckin" ?  (
-                <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
+                <Paper variant="outlined" sx={{ mr:10, my: { md: 0, lg: 0 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
                 
                 <FormControlLabel
                         control={
@@ -172,6 +172,7 @@ export default function ServiceSetting() {
                       value={latestBookingSchedule}
                       onChange={handleChangeLatestBookingSchedule}
                       // label=""
+                      sx={{width:150}}
                     >
                       <MenuItem value="">
                         <em>None</em>
@@ -197,7 +198,7 @@ export default function ServiceSetting() {
                 
               <FormControlLabel value="requireCheckInAndOut" control={<Radio />} label="Require check-in and check-out" />
               { serviceFee === "requireCheckInAndOut"  ?  (
-            <Paper variant="outlined" sx={{ mr:10, ml: 10, my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
+            <Paper variant="outlined" sx={{ mr:10, my: { md: 0, lg: 0 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA'}}>
             <FormControlLabel
                     control={
                       <Checkbox checked={checkInAndOut} onChange={handleChangeCheckInAndOut}  inputProps={{ 'aria-label': 'controlled' }} name="checkInandOut" />
@@ -217,6 +218,7 @@ export default function ServiceSetting() {
                   value={latestBookingSchedule}
                   onChange={handleChangeLatestBookingSchedule}
                   // label=""
+                  sx={{width:150}}
                 >
                   <MenuItem value="">
                     <em>None</em>
