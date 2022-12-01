@@ -1,21 +1,21 @@
 import ExampleTheme from "./themes/ExampleTheme";
-import { LexicalComposer } from "@lexical/react/LexicalComposer.js";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin.js";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable.js";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin.js";
-import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin.js";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary.js";
+import { LexicalComposer } from "../node_modules/@lexical/react/LexicalComposer.js";
+import { RichTextPlugin } from "../node_modules/@lexical/react/LexicalRichTextPlugin.js";
+import { ContentEditable } from "../node_modules/@lexical/react/LexicalContentEditable.js";
+import { HistoryPlugin } from "../node_modules/@lexical/react/LexicalHistoryPlugin.js";
+import { AutoFocusPlugin } from "../node_modules/@lexical/react/LexicalAutoFocusPlugin.js";
+import LexicalErrorBoundary from "../node_modules/@lexical/react/LexicalErrorBoundary.js";
 
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
-import { HeadingNode, QuoteNode } from "@lexical/rich-text";
-import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
-import { ListItemNode, ListNode } from "@lexical/list";
-import { CodeHighlightNode, CodeNode } from "@lexical/code";
-import { AutoLinkNode, LinkNode } from "@lexical/link";
-import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin.js";
-import { ListPlugin } from "@lexical/react/LexicalListPlugin.js";
-import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin.js";
-import { TRANSFORMERS } from "@lexical/markdown";
+import { HeadingNode, QuoteNode } from "../node_modules/@lexical/rich-text";
+import { TableCellNode, TableNode, TableRowNode } from "../node_modules/@lexical/table";
+import { ListItemNode, ListNode } from "../node_modules/@lexical/list";
+import { CodeHighlightNode, CodeNode } from "../node_modules/@lexical/code";
+import { AutoLinkNode, LinkNode } from "../node_modules/@lexical/link";
+import { LinkPlugin } from "../node_modules/@lexical/react/LexicalLinkPlugin.js";
+import { ListPlugin } from "../node_modules/@lexical/react/LexicalListPlugin.js";
+import { MarkdownShortcutPlugin } from "../node_modules/@lexical/react/LexicalMarkdownShortcutPlugin.js";
+import { TRANSFORMERS } from "../node_modules/@lexical/markdown";
 
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
