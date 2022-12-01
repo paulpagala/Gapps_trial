@@ -27,6 +27,8 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+// import {serviceFee} from '../components/sidenav/ServiceSetting'
+import Link from 'next/link'
 
 
 
@@ -277,9 +279,10 @@ export default function ParkingDashboard (){
         </TableHead>
         <TableBody>
           {rows.map((row) => (
+            
             <StyledTableRow key={row.parkingAreaName}>
               <StyledTableCell component="th" scope="row" sx={{fontSize:16}}>
-                {row.parkingAreaName}
+              <Link href='/parkingArea' style={{ textDecoration: 'none',color:'black' }}>{row.parkingAreaName}</Link>
               </StyledTableCell>
               <StyledTableCell align="left" sx={{fontSize:16}}>{row.address}</StyledTableCell>
               <StyledTableCell align="left">
@@ -303,6 +306,7 @@ export default function ParkingDashboard (){
                 </ToggleButton>
               </StyledTableCell>
             </StyledTableRow>
+           
           ))}
         </TableBody>
       </Table>
@@ -319,7 +323,7 @@ export default function ParkingDashboard (){
     <Typography sx={{fontWeight:'bold'}}>Service schedule</Typography>
     </Box>
     <Box>
-    <Typography sx={{fontWeight:'bold'}}>Check-in options</Typography>   
+    <Typography sx={{fontWeight:'bold'}}>Check-in options</Typography>  
     </Box>
     </Paper>
     <Paper variant="outlined" sx={{ ml: '4%', my: { md: 3, lg: 5 }, p: { md: 2, lg: 3 }, backgroundColor:'#FAFAFA',width:'55%'}}>
